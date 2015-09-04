@@ -7,13 +7,13 @@ tags: 多说
 多说是通过在你的页面当中内嵌一个多说的JS来实现评论的功能。所以我们需要将多说的JS内嵌到我们的hexo创建的博客当中。
 
 ### 1. 多说添加网站
-当然，首先我们需要在多说添加一个网站，http://duoshuo.com/create-site/，在此页面添加你自己的网站信息。
+当然，首先我们需要在多说添加一个网站，[多说创建页面](http://duoshuo.com/create-site/)，在此页面添加你自己的网站信息。
 
 ### 2. 拷贝通用代码
 然后进入对应的管理后台，选择 `工具` -- `获取代码` -- `通用代码`, 然后可以查看到多说需要你在你的页面中插入的代码。
 
-### 3. 修改_config.xml
-到hexo你的博客的根目录，在_config.xml里面新增一个变量，如duoshuo_shortname: your-short-name-in-duo-shuo。这个变量名是随便起的，但是要跟下一步对应起来。变量值，是你在第1步当中输入的多说域名。
+### 3. 修改_config.yml
+到hexo你的博客的根目录，在_config.yml里面新增一个变量，如duoshuo_shortname: your-short-name-in-duo-shuo。这个变量名是随便起的，但是要跟下一步对应起来。变量值，是你在第1步当中输入的多说域名。
 
 ### 4. 修改主题中评论代码
 到hexo当中找到你选用的themes的文件夹，比如我用的是light的主题，则在themes/light/layout/_partial/comment.ejs, 其实不同的主题，对应的文件是不一样的，这一步就需要大家稍微去看一下里面的代码。比如我这边light主题comment.ejs里面其实已经有light主题内置的facebook或disqus评论组件，然并卵，这是一个不存在的网站。
@@ -63,4 +63,5 @@ tags: 多说
 其实对于其他类型的themes其实也是一样的。看一下代码改改变量就ok了。
 按照之上几步就可以在hexo博客当中插入多说评论。大家有问题欢迎评论。谢谢：)。
 
-> 更多的信息请查看 http://ibruce.info/2013/11/22/hexo-your-blog/
+### 参考
+1. 更多的信息请查看 http://ibruce.info/2013/11/22/hexo-your-blog/
