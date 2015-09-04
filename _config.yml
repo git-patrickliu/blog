@@ -10,6 +10,8 @@ author: patrickliu
 language: zh-CN
 timezone:
 
+duoshuo_shortname: blogdapenggaofei
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://git-patrickliu.github.io
@@ -63,8 +65,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: jacman
-
+theme: light
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
