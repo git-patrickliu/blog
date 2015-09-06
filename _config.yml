@@ -70,5 +70,5 @@ theme: light
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/git-patrickliu/hexo-blog
+  repository: https://github.com/git-patrickliu/git-patrickliu.github.io
 
