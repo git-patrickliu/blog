@@ -1,7 +1,7 @@
-title: OneApm，just the one.
+title: OneAPM，just the one.
 date: 2015-09-04 22:07:51
 tags:
-- OneApm
+- OneAPM
 - APM
 - monitor
 
@@ -18,7 +18,7 @@ tags:
 
 大家可以看看Velocity的赞助商们（不得不吐槽一下，这届Velocity，有一半都是赞助商们的广告），基本都是围绕着APM这个话题。我也趁机将他们中的绝大多数都试用了一下，最后选中了OneAPM作为我们暂时的前端加载速度监测工具。
 
-OneAPM都有一些什么特色，让我们最终选择了她呢？我总结了一下大概有以下几点：
+OneAPM[前端性能监控](http://www.oneapm.com/bi/feature.html)都有一些什么特色，让我们最终选择了她呢？我总结了一下大概有以下几点：
 
 ### OneAPM 提供了两种前端监测代码注入方式。
 一种是用户手动在html当中插入script，一种是通过用户部署后台agent自动插入script。
@@ -33,23 +33,28 @@ OneAPM并不只是提供简单的浏览器performance的上报，而是对其进
 
 还支持`浏览器`, `运营商`, `地理` 三个围度的加载情况查看。提供了慢事务追踪，静态文件加载瀑布流。
 ![总览](http://7xkybo.com1.z0.glb.clouddn.com/oneapm2.png)
+![瀑布流](http://7xkybo.com1.z0.glb.clouddn.com/oneapm3.png)
 
 其实上面2点，是我们最初想要的功能。能提供我们就已经很开心了。后面的几个额外功能更加让我们确信要使用OneAPM了。
 
 ### Ajax耗时功能
 这是一个非常好用的功能。相信后台艰苦卓绝的将后台CGI响应减少了10ms，但是前端一不小心就多了100ms，甚至大几百ms。所以前端AJAX测速同样是非常重要的。我们可以在这查看到哪一些CGI的速度慢，可以进行专项优化。
+![Ajax耗时检测](http://7xkybo.com1.z0.glb.clouddn.com/oneapm4.png)
 
 ### 脚本错误功能
 这个功能不得不赞一下，因为他让我们发现了不少内嵌APP页面的错误。开发过mobile APP内嵌页的同学们都知道，移动端的调试非常麻烦，而移动端的错误就更加难以捕捉。有了这个功能，我们可以迅速知道我们线上页面的健康度（尤其是线上出现重大BUG，突发某一些错误时）。
+![脚本错误展示](http://7xkybo.com1.z0.glb.clouddn.com/oneapm5.png)
 
 ### HTTPS!!!
 其实这个最重要。。因为如果不支持HTTPS的话，我们就直接bye bye走人了。因为我们的页面对安全要求比较高，是全站HTTPS的。而OneAPM是HTTP和HTTPS都支持的。
+![认准双斜杠](http://7xkybo.com1.z0.glb.clouddn.com/oneapm6.png)
 
 ### 强大的技术支持
 我只是在试用阶段，北京的OneAPM同学就直接拉了一个群，非常热心地解决我的各种试用问题，和解答各种技术上的疑惑。企业产品和个人产品不一样，企业产品最重要的是要用得放心，舒心。对于我来说，OneAPM做到了。
+![技术支持](http://7xkybo.com1.z0.glb.clouddn.com/oneapm7.png)
 
 综上，有了详细的用户加载时间，我们才能进行下一步的专项优化。
 
 PS: 当然有要吐槽的：
 1. 吞吐量的单位ppm，还是没有习惯，弄成PV是不是更好一些？
-2. 页面展示的维度，取path是不够的，这样容易让开发，测试和线上的数据混在一起。
+2. 页面展示的维度，取path是不够的，这样容易让开发，测试和线上的数据混在一起（这个据说已在开发了，赞一记）。
