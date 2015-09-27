@@ -3,7 +3,7 @@ date: 2015-08-19 19:52:16
 tags: velocity
 ---
 
-关键词：https优化，前端加载优化，hybrid，APM(application performance monitor）。
+关键词：tps优化，前端加载优化，hybrid，APM(application performance monitor）。
 
 1. https优化。
 > - HttpDNS, 通过http方式向第三方的固定IP方式来获取指定域名的IP来进行DNS解析[^httpDNS]（我们可以考虑在客户端新增HttpDNS）
