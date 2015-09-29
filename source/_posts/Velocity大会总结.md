@@ -6,23 +6,23 @@ tags: velocity
 关键词：tps优化，前端加载优化，hybrid，APM(application performance monitor）。
 
 1. https优化。
-> - HttpDNS, 通过http方式向第三方的固定IP方式来获取指定域名的IP来进行DNS解析[^httpDNS]（我们可以考虑在客户端新增HttpDNS）
-> - 启用HSTS[^HSTS] （我们尚未全站启用https，所以这个不太好启动）
-> - 启用OCSP Stapling[^OCSP]（可以采用，但需要查看兼容性以及要及时更新签名，以及注意证书链大小）
+> - HttpDNS, 通过http方式向第三方的固定IP方式来获取指定域名的IP来进行[DNS解析][^httpDNS]（我们可以考虑在客户端新增HttpDNS）
+> - 启用[HSTS][^HSTS] （我们尚未全站启用https，所以这个不太好启动）
+> - 启用[OCSP Stapling][^OCSP]（可以采用，但需要查看兼容性以及要及时更新签名，以及注意证书链大小）
 > - 复用session，减少握手次数
 > - 精确设置TLS Record Size，size过小，overhead比重增大，size过大，单record的TCP分段过多
 > - TLS硬件加速
 > - SPDY/HTTP2.0，可以研究，但近期可能用不上。
-> - 配置Forward secrecy cipher 支持False start[^falsestart]  （可以采用，省掉一个RTT时间）
+> - 配置Forward secrecy cipher 支持[False start][^falsestart]  （可以采用，省掉一个RTT时间）
 > - 升级openssl版本到最新（我们的版本是openssl-1.0.2c）
 > - 确认TLS压缩禁用（nginx 1.3.x以上版本都自动关闭，不关闭有漏洞，我们nginx是1.6.3）
 > - 确认SNI支持 （已支持，多个证书部署在同一个IP上）
 > - 使用 **//**，来引用静态资源文件，保证http能无缝迁到https环境（我们已经使用了，但是一个360的同僚说在某些地方的移动运营商会将**//** 篡改为 **/**。但是iPhone5s 上海中国移动未发现问题）。
-> ![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0612.JPG)
+> ![TLS总结](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0612.JPG)
 
 2. 页面直出方法，对比？
 > - nginx + lua 页面直出（京东618采用）
-> ![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0571.JPG)
+> ![nginx + lua](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0571.JPG)
 > - ATS （apache traffic server）页面直出（Yahoo采用）
 > - nodejs直出
 
@@ -31,7 +31,7 @@ tags: velocity
 > - composition layer，z-index相同导致的渲染变慢（阿里分享），可查看 [css conf](http://www.w3ctech.com/topic/1463) 360的分享有讨论此问题。
 
 4. hybrid
-> - 百度 Blend UI系统架构。通过封装统一JS UI API，如果是在百度app内部的webview，则调用的是原生的UI样式，否则调用的是JS统一的UI样式[^blendUI]
+> - 百度 Blend UI系统架构。通过封装统一JS UI API，如果是在百度app内部的webview，则调用的是原生的UI样式，否则调用的是JS统一的[UI样式][^blendUI]
 > - Yahoo 采用reactjs + [flux](https://facebook.github.io/flux/)
 
 
@@ -43,11 +43,11 @@ tags: velocity
 
 ##### 一些方法论：
 > - 保持simplicity
-> ![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0560.JPG)
+> ![保持简单](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0560.JPG)
 > - build high performance team
-> ![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0585.JPG)
+> ![high performance team](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0585.JPG)
 > - 优化问题方法论
-> ![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0616.JPG)
+> ![优化步骤](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0616.JPG)
 
 
 ##### 我们暂时能够跟进的：
@@ -78,9 +78,9 @@ tags: velocity
 [^falsestart]: 查看[网址](http://chimera.labs.oreilly.com/books/1230000000545/ch04.html)，啥是false start（抢跑）。
 
 [^blendUI]: 百度blendUI详细如下：
-![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0593.JPG)
-![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0594.JPG)
-![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0595.JPG)
-![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0596.JPG)
-![enter image description here](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0597.JPG)
+![blend UI 1](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0593.JPG)
+![blend UI 2](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0594.JPG)
+![blend UI 3](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0595.JPG)
+![blend UI 4](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0596.JPG)
+![blend UI 5](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0597.JPG)
 
