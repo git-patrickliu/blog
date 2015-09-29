@@ -30,7 +30,6 @@ function putb64(){
 上面是官方给的JS示例，注释是我加的。有着以下几个问题：
 
 1. 传的pic的值，一定要是base64之后去掉MIME前面几个字符，以及base64加逗号那几个字符才是正常传的值。
-
 ![base64字符串](http://7xkybo.com1.z0.glb.clouddn.com/qiniu-remote-upload-1.png?v=1)
 
 2. 如果不想算大小的话，比如我，直接在url当中改成-1。
