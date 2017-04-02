@@ -100,3 +100,5 @@ else
     ngx.exec("@grayProxy")
 end
 ```
+
+[查看ppt](http://ppt.dapenggaofei.com/md/introductionToNginxLua.md)

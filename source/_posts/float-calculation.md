@@ -125,3 +125,5 @@ Q4: 8位有符号的补码，可表示的数值范围是？
 
 `0.7+0.2` = `?`
 
+[查看ppt](http://ppt.dapenggaofei.com/md/float.md)
+
