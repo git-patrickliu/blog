@@ -1,6 +1,6 @@
 title: float-calculation
 date: 2015-12-13 18:37:29
-tags: 浮点数计算
+tags:
 - js float
 - js 浮点数计算
 ---
