@@ -23,8 +23,7 @@ try {
 }
 ```
 
-按说一切都没有问题，也考虑足够全面。但是iOS下的微信却
-但是在iOS下的微信执行逻辑却有问题。google了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。[点击查看详情](http://stackoverflow.com/questions/28241940/safari-not-catching-exception-when-trying-to-access-parent-window-object-with-ja)。
+按说一切都没有问题，也考虑足够全面。但是在iOS下的微信执行逻辑却有问题。细细定位了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。[点击查看详情](http://stackoverflow.com/questions/28241940/safari-not-catching-exception-when-trying-to-access-parent-window-object-with-ja)。
 
 解决方案如下：
 ```javascript
