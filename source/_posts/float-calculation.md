@@ -4,6 +4,7 @@ tags:
 - js float
 - js 浮点数计算
 ---
+[查看ppt](http://ppt.dapenggaofei.com/md/float.md)
 
 话说某天一个同事问我，为啥在JS里面 **0.2+0.4**，结果不是**0.6**。我想这个问题随便问一个人，都可以得出结果就是**0.6**， 而JS计算之后的结果是：
 
@@ -125,5 +126,4 @@ Q4: 8位有符号的补码，可表示的数值范围是？
 
 `0.7+0.2` = `?`
 
-[查看ppt](http://ppt.dapenggaofei.com/md/float.md)
 

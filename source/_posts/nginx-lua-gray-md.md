@@ -4,6 +4,8 @@ tags:
 - NGINX
 - LUA
 ------
+[查看ppt](http://ppt.dapenggaofei.com/md/introductionToNginxLua.md)
+
 感谢国人agentzh，让我们能够以一种更加简单的方式来控制Nginx。即：使用脚本语言LUA来嵌入到Nginx当中来进行编程。
 
 我们一期实现的灰度功能比较简单。原理是通过读取用户请求cookie(如uuid)是否在redis的白名单当中，来让用户定向到不同的Web后端机器。
@@ -101,4 +103,3 @@ else
 end
 ```
 
-[查看ppt](http://ppt.dapenggaofei.com/md/introductionToNginxLua.md)
