@@ -1,5 +1,5 @@
 title: 将世界美景收纳怀中
-date: 2016-03-17 13:24:40
+date: 2017-03-17 13:24:40
 tags:
 - 七牛
 - Chrome扩展
@@ -25,5 +25,6 @@ tags:
 > ![ctrl+v上传](http://onlineimages.dapenggaofei.com/59201c291ee04cfa4a93d32c6f7afe06.png)
 
 > 这一下就NB了,你可以直接用QQ等工具截图或者直接ctrl+c复制本地的一张图片,然后在这块区域中ctrl+v, 就可以直接上传七牛. 存图更加方便了.
+> 我在用markdown写这篇博客的时候, 想要贴图就太方便了,截图上传拷url粘贴, 搞定!
 
 如果是本地上传文件到七牛，推荐这个chrome扩展，[【点击前往】](https://chrome.google.com/webstore/detail/qiniu-upload-files/emmfkgdgapbjphdolealbojmcmnphdcc)。
