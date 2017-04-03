@@ -10,6 +10,8 @@ tags:
 
 我们一期实现的灰度功能比较简单。原理是通过读取用户请求cookie(如uuid)是否在redis的白名单当中，来让用户定向到不同的Web后端机器。
 
+以下是实现的LUA代码, ngx.ctx里面的几个值都是在事先在其他LUA代码中已经定义好的. 涉及内网信息就不方便公开了.
+
 ```lua
 -- read cookie & set to ctx.clientUID
 local cookieName = ngx.ctx.cookieName
