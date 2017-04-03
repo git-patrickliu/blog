@@ -86,7 +86,7 @@ window.addEventListener("popstate", function(e) {
 
 有同学会问，到了index3.html的时候再点击返回，不是又回到了index1.html吗？这种情况怎么解决呢？
 
-针对这种情况，我们在index2.html页面调用backURL方法的时候，传入的是index3.html?backURL=encodeURIComponent(homepage.html?cantGoBack=true)，这样在index3.html中js初始化的时候，发现有传backURL的参数，就再次调用backURL('homepage.html?cantGoBack=true')。到了首页发现有传cantGoBack=true, 就调用backURL传入我们的一个中转页，每次到中转页就自动又跳到当前页面 backURL('urlProxy.html?jumpUri=homepage.html')。这样就首页点击返回就一直都是首页了。[查看示例demo](http://demo.dapenggaofei.com/wechat-return-button/example01/index1.html)
+针对这种情况，我们在index2.html页面调用backURL方法的时候，传入的是index3.html?backURL=encodeURIComponent(homepage.html?cantGoBack=true)，这样在index3.html中js初始化的时候，发现有传backURL的参数，就再次调用backURL('homepage.html?cantGoBack=true')。到了首页发现有传cantGoBack=true, 就调用backURL传入我们的一个中转页，每次到中转页就自动又跳到当前页面 backURL('urlProxy.html?jumpUri=homepage.html')。这样就首页点击返回就一直都是首页了。[查看示例demo](http://demo.dapenggaofei.com/wechat-return-button-control/example01/index1.html)
 
 ### 三、存在的问题
 其实这种方法还存在着一个问题还没有解决。就是我们这一套都是基于JS实现的，如果用户点击过快，还是可以绕过我们设置的障碍，跳到我们不希望用户查看到的页面去了。这个还没有想到比较好的解决方案....
