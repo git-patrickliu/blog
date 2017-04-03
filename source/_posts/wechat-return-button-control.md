@@ -79,14 +79,14 @@ window.addEventListener("popstate", function(e) {
 ```
 在需要指定返回的时候，只需要调用backURL的方法，就能保证点击微信的系统返回键，会返回到指定的页面。
 
-比如：用户当前在index1.html, 正常点击进入index2.html, 在index2.html进入index3.html的时候，我们调用了backURL('index1.html'), 此时history中的栈信息为
-**['index1.html', 'index2.html', 'index1.html', 'index2.html', 'index3.html（栈顶）']**。
+比如：用户当前在index1.html, 正常点击进入index2.html, 然后我们希望用户在点击返回的时候, 能够返回到index3.html，我们在index2.html中调用了backURL('index3.html'), 此时history中的栈信息为
+**['index1.html', 'index3.html', 'index2.html']**。
 
-用户在index3.html点击返回的时候，不会触发popstate事件，直接返回到index2.html这个页面。再点击返回将触发popstate事件（如果index2.html页面中没有监听popstate事件，只会看到url变成了index1.html, 页面并没有变化），index2.html中的js在监听到页面变化之后，将直接跳到index1.html页面，从而实现了返回到指定页面的目的。
+这样用户在index2.html页面点击返回的时候, 将返回到index3.html, 而不是之前的index1.html页面.
 
-有同学会问，到了index1.html的时候再点击返回，不是又回到了index2.html吗？这种情况怎么解决呢？
+有同学会问，到了index3.html的时候再点击返回，不是又回到了index1.html吗？这种情况怎么解决呢？
 
-针对这种情况，我们在index2.html页面调用backURL方法的时候，传入的是index1.html?backURL=encodeURIComponent(homepage.html?cantGoBack=true)，这样在index1.html中js初始化的时候，发现有传backURL的参数，就再次调用backURL('homepage.html?cantGoBack=true')。到了首页发现有传cantGoBack=true, 就调用backURL传入我们的一个中转页，每次到中转页就自动又跳到当前页面 backURL('urlProxy.html?jumpUri=homepage.html')。这样就首页点击返回就一直都是首页了。[查看示例demo](http://demo.dapenggaofei.com/wechat-return-button/example01/index1.html)
+针对这种情况，我们在index2.html页面调用backURL方法的时候，传入的是index3.html?backURL=encodeURIComponent(homepage.html?cantGoBack=true)，这样在index3.html中js初始化的时候，发现有传backURL的参数，就再次调用backURL('homepage.html?cantGoBack=true')。到了首页发现有传cantGoBack=true, 就调用backURL传入我们的一个中转页，每次到中转页就自动又跳到当前页面 backURL('urlProxy.html?jumpUri=homepage.html')。这样就首页点击返回就一直都是首页了。[查看示例demo](http://demo.dapenggaofei.com/wechat-return-button/example01/index1.html)
 
 ### 三、存在的问题
 其实这种方法还存在着一个问题还没有解决。就是我们这一套都是基于JS实现的，如果用户点击过快，还是可以绕过我们设置的障碍，跳到我们不希望用户查看到的页面去了。这个还没有想到比较好的解决方案....
