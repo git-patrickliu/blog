@@ -29,7 +29,7 @@ cookie对前端的重要性不言而喻，而cookie的错乱会影响用户的�
 下面需要的就是在业务的每一个页面下新建一个虚拟页面，如/froadmall/m/home/index/clearCookieVirtual.html， （这个页面可以在Nginx层直接rewrite到一个公用的页面）,这个页面就负责把指定的域名的上面组合都清空就好了。
 
 在实际操作过程中发现了一个坑，就是以点开头的domain和没有点开头的domain的区别。
-![domain](http://onlineimages.dapenggaofei.com/68995c1bc3be99db35aef63579587b93.png)
+![domain](https://dn-dapenggaofei.qbox.me/68995c1bc3be99db35aef63579587b93.png)
 在设置cookie的时候，如果没有主动指定域名，就会设置成www.52shangchao.com, 表示这个cookie仅对www.52shangchao.com有效，对x.www.52shangchao.com是无效的。 如果主动指定了www.52shangchao.com的域名，在chrome开发工具当中就会显示出.www.52shangchao.com，表示该cookie不仅对www.52shangchao.com有效，还对x.www.52shangchao.com有效。具体可以查看stackoverflow上的讨论 [unable-to-delete-cookie-from-javascript](http://stackoverflow.com/questions/5688491/unable-to-delete-cookie-from-javascript) && [what-does-the-dot-prefix-in-the-cookie-domain-mean](http://stackoverflow.com/questions/9618217/what-does-the-dot-prefix-in-the-cookie-domain-mean)。这样在清除的时候还必须考虑没有指定domain时的这个特殊情况。
 
 

@@ -30,7 +30,7 @@ function putb64(){
 上面是官方给的JS示例，注释是我加的。有着以下几个问题：
 
 1. 传的pic的值，一定要是base64之后去掉MIME前面几个字符，以及base64加逗号那几个字符才是正常传的值。
-![base64字符串](http://7xkybo.com1.z0.glb.clouddn.com/qiniu-remote-upload-1.png?v=1)
+![base64字符串](https://o0sjgyj4t.qnssl.com/qiniu-remote-upload-1.png?v=1)
 
 2. 如果不想算大小的话，比如我，直接在url当中改成-1。
 3. 重点来了，UpToken，其算法在[官网](http://developer.qiniu.com/docs/v6/api/reference/security/put-policy.html)写得非常清楚 ，但是呢，我一直在scope里面传`<bucket>:<key>`，一直是返回401，说是授权不合法。后来尝试了一下scope只传`<bucket>`，但是在saveKey当中传想要的key值，才能授权正常，也是醉了。

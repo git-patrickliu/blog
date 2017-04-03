@@ -18,11 +18,11 @@ tags: velocity
 > - 确认TLS压缩禁用（nginx 1.3.x以上版本都自动关闭，不关闭有漏洞，我们nginx是1.6.3）
 > - 确认SNI支持 （已支持，多个证书部署在同一个IP上）
 > - 使用 **//**，来引用静态资源文件，保证http能无缝迁到https环境（我们已经使用了，但是一个360的同僚说在某些地方的移动运营商会将**//** 篡改为 **/**。但是iPhone5s 上海中国移动未发现问题）。
-> ![TLS总结](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0612.JPG)
+> ![TLS总结](https://o0sjgyj4t.qnssl.com/IMG_0612.JPG)
 
 2. 页面直出方法，对比？
 > - nginx + lua 页面直出（京东618采用）
-> ![nginx + lua](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0571.JPG)
+> ![nginx + lua](https://o0sjgyj4t.qnssl.com/IMG_0571.JPG)
 > - ATS （apache traffic server）页面直出（Yahoo采用）
 > - nodejs直出
 
@@ -43,11 +43,11 @@ tags: velocity
 
 ##### 一些方法论：
 > - 保持simplicity
-> ![保持简单](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0560.JPG)
+> ![保持简单](https://o0sjgyj4t.qnssl.com/IMG_0560.JPG)
 > - build high performance team
-> ![high performance team](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0585.JPG)
+> ![high performance team](https://o0sjgyj4t.qnssl.com/IMG_0585.JPG)
 > - 优化问题方法论
-> ![优化步骤](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0616.JPG)
+> ![优化步骤](https://o0sjgyj4t.qnssl.com/IMG_0616.JPG)
 
 
 ##### 我们暂时能够跟进的：
@@ -78,9 +78,9 @@ tags: velocity
 [^falsestart]: 查看[网址](http://chimera.labs.oreilly.com/books/1230000000545/ch04.html)，啥是false start（抢跑）。
 
 [^blendUI]: 百度blendUI详细如下：
-![blend UI 1](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0593.JPG)
-![blend UI 2](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0594.JPG)
-![blend UI 3](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0595.JPG)
-![blend UI 4](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0596.JPG)
-![blend UI 5](http://7xkybo.com1.z0.glb.clouddn.com/IMG_0597.JPG)
+![blend UI 1](https://o0sjgyj4t.qnssl.com/IMG_0593.JPG)
+![blend UI 2](https://o0sjgyj4t.qnssl.com/IMG_0594.JPG)
+![blend UI 3](https://o0sjgyj4t.qnssl.com/IMG_0595.JPG)
+![blend UI 4](https://o0sjgyj4t.qnssl.com/IMG_0596.JPG)
+![blend UI 5](https://o0sjgyj4t.qnssl.com/IMG_0597.JPG)
 

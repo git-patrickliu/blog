@@ -8,7 +8,7 @@ tags:
 
 话说某天一个同事问我，为啥在JS里面 **0.2+0.4**，结果不是**0.6**。我想这个问题随便问一个人，都可以得出结果就是**0.6**， 而JS计算之后的结果是：
 
-![0.2+0.4 result](http://onlineimages.dapenggaofei.com/ff2efb5a2f58b399125a02c805e3b560.png)
+![0.2+0.4 result](https://dn-dapenggaofei.qbox.me/ff2efb5a2f58b399125a02c805e3b560.png)
 
 下面我们来回忆一下学习过的计算机组成原理相关的知识。一步一步来揭示这个问题的真相。
 
