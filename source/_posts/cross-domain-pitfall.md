@@ -16,14 +16,17 @@ try {
     if(top && top.successCallback) {
          top.successCallback(xxxxxx);
     } else {
-        top.postMessage(xxxxxxx);
+         // do something else
     }
 } catch(e) {
+    // 如果不能直接调用, top的函数,就用postMessage来跨域传输
     top.postMessage(xxxxx);
 }
 ```
 
-按说一切都没有问题，也考虑足够全面。但是在iOS下的微信执行逻辑却有问题。细细定位了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。[点击查看详情](http://stackoverflow.com/questions/28241940/safari-not-catching-exception-when-trying-to-access-parent-window-object-with-ja)。
+按说一切都没有问题，也考虑足够全面。但是在iOS下的微信执行逻辑却有问题。细细定位了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。
+而是返回undefined, 这样就走进了上面else的逻辑.
+[点击查看详情](http://stackoverflow.com/questions/28241940/safari-not-catching-exception-when-trying-to-access-parent-window-object-with-ja)。
 
 解决方案如下：
 ```javascript
