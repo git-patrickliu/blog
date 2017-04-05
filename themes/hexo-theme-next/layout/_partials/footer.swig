@@ -25,5 +25,6 @@
     NexT{% if theme.scheme %}.{{ theme.scheme }}{% endif %}
   </a>
 </div>
+<script type="text/javascript" async="async" src="//tajs.qq.com/stats?sId=61554727" charset="UTF-8"></script>
 
 {% block footer %}{% endblock %}

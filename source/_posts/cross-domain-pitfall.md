@@ -24,8 +24,7 @@ try {
 }
 ```
 
-按说一切都没有问题，也考虑足够全面。但是在iOS下的微信执行逻辑却有问题。细细定位了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。
-而是返回undefined, 这样就走进了上面else的逻辑.
+按说一切都没有问题，也考虑足够全面。但是在iOS下的微信执行逻辑却有问题。细细定位了一下，发现是iOS对于跨域直接访问**top && top.func** 并不会抛出异常。而是返回undefined, 这样就走进了上面else的逻辑.
 [点击查看详情](http://stackoverflow.com/questions/28241940/safari-not-catching-exception-when-trying-to-access-parent-window-object-with-ja)。
 
 解决方案如下：
