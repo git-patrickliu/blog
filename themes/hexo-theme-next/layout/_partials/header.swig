@@ -50,4 +50,14 @@
     </div>
   {% endif %}
 </nav>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?bed7a7aa974fbc40240ecc91f33a0fcc";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 
