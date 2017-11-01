@@ -7,3 +7,4 @@ public/
 .idea
 qrsync
 config.json
+start.sh
